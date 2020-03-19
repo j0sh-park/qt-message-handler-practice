@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
     MessagePresenter *messagePresenter = new MessagePresenter(messageHandler, ui->tableView);
     (void)messagePresenter;
 
-    messageTester->startTest(10000000);
+    messageTester->startTest(100000000);
 }
 
 MainWindow::~MainWindow()

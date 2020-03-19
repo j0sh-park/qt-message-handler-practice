@@ -35,10 +35,7 @@ void MessagePresenter::displayOnBackground()
         while(!this->messageStack->isEmpty() && messages.count() < 10000) {
             messages.append(this->messageStack->pop());
         }
-        while(!this->messageStack->isEmpty()) {
-            const Message message = messageStack->pop();
-            delete &message;
-        }
+        messageStack->clear();
         this->sync.unlock();
         for (int i = 0; i < lastMessages.count() && messages.count() < 10000; i++) {
             messages.append(lastMessages.at(i));
@@ -127,9 +124,7 @@ void MessageModel::updateMessages(QList<Message> &messages)
     if (this->messages->count() > messages.count()) {
         beginRemoveRows(parent, messages.count(), this->messages->count() - 1);
         while(this->messages->count() > messages.count()) {
-            const Message message = this->messages->last();
             this->messages->removeLast();
-            delete &message;
         }
         endRemoveRows();
     }
