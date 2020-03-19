@@ -5,11 +5,11 @@ MessageHandler::MessageHandler()
 
 }
 
-void MessageHandler::handleMessage(Message *message)
+void MessageHandler::handleMessage(Message &message)
 {
     for (MessageObserver *observer : observers)
     {
-        observer->onMessageReceived(Message(*message));
+        observer->onMessageReceived(Message(message));
     }
 }
 

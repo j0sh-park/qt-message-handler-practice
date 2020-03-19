@@ -10,7 +10,7 @@
 #include <QMutex>
 #include <QWaitCondition>
 #include <QT>
-#include <QtConcurrent>
+#include <QtConcurrent/QtConcurrent>
 #include <QMetaObject>
 #include <QList>
 #include <QVariant>

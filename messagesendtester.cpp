@@ -15,9 +15,9 @@ void MessageSendTester::startTest(int count)
 void MessageSendTester::sendTestMessages(int count)
 {
     for (int i = 0; i < count; i++) {
-        Message *message = new Message(i);
+        Message message(i);
         this->handler->handleMessage(message);
-        delete message;
+        QThread::msleep(1);
         if (i % 1000000 == 0)
             std::cout<<i/1000000<<std::endl;
     }

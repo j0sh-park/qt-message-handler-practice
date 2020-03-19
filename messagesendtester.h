@@ -2,7 +2,7 @@
 #define MESSAGESENDTESTER_H
 
 #include "messagehandler.h"
-#include <QtConcurrent>
+#include <QtConcurrent/QtConcurrent>
 
 class MessageSendTester
 {

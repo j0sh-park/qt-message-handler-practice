@@ -15,7 +15,7 @@ private:
     std::vector<MessageObserver*> observers;
 public:
     MessageHandler();
-    void handleMessage(Message *message);
+    void handleMessage(Message &message);
     void addObserver(MessageObserver *observer);
     void removeObserver(MessageObserver *observer);
 };
